@@ -2,190 +2,161 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MyHR & IT - Ponto de Acesso</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MyHR & IT Totem - Login</title>
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="styleguide.css" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    /* Reset básico */
     body, html {
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #f4f4f4;
-      color: #000;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      background: #f4f4f4;
     }
-
-    /* Container principal */
-    .container {
-      max-width: 600px;
+    #mainContent {
+      max-width: 360px;
       margin: 0 auto;
-      background-color: #fff;
-      border-radius: 16px 16px 0 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 24px 32px 40px;
-      text-align: center;
-      flex-grow: 1;
-    }
-
-    /* Imagem topo (fábrica Bayer) */
-    .header-image {
-      width: 100%;
-      border-radius: 16px 16px 0 0;
-      display: block;
-    }
-
-    /* Logo Bayer, dentro da área branca, centralizado */
-    .logo-top {
-      width: 70px;
-      height: 70px;
-      margin: -40px auto 16px;
-      border-radius: 50%;
-      border: 2px solid #4da13e;
-      background-color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      background: white;
+      border-radius: 24px 24px 0 0;
+      padding: 40px 24px 64px;
+      box-shadow: 0 0 15px rgb(0 0 0 / 0.1);
       position: relative;
       z-index: 10;
     }
-
-    .logo-top img {
-      width: 48px;
-      height: 48px;
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 3px solid #76aa40;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
       object-fit: contain;
     }
-
-    /* Título principal */
     h1 {
+      font-size: 24px;
       font-weight: 700;
-      font-size: 28px;
-      color: #1f4a99;
+      color: #174a99;
       margin: 0;
     }
-
-    h1 span {
-      color: #4da13e;
+    h1 .green {
+      color: #76aa40;
     }
-
-    /* Subtítulo */
-    .subtitle {
+    p.subtitle {
+      margin: 8px 0 24px 0;
       font-weight: 600;
-      font-size: 18px;
-      margin: 8px 0 24px;
       color: #333;
     }
-
-    /* Texto explicativo */
-    p {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1.4;
-      margin: 12px 0;
+    p.description {
+      font-size: 14px;
       color: #000;
+      line-height: 1.4;
+      margin-bottom: 24px;
     }
-
-    /* Botões com links */
     .btn {
-      display: block;
       width: 100%;
       padding: 14px 0;
-      border-radius: 8px;
       font-weight: 700;
-      font-size: 18px;
-      color: white;
-      text-decoration: none;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-      margin: 12px 0;
-      transition: background-color 0.3s ease;
+      font-size: 16px;
+      border-radius: 8px;
       border: none;
       cursor: pointer;
-      text-align: center;
-    }
-
-    .btn.administrativo {
-      background-color: #1f4a99;
-    }
-    .btn.administrativo:hover {
-      background-color: #163a75;
-    }
-
-    .btn.manufatura {
-      background-color: #4da13e;
-    }
-    .btn.manufatura:hover {
-      background-color: #3b7e2d;
-    }
-
-    /* Footer fixo */
-    footer {
-      background-color: #1f4a99;
+      margin-bottom: 16px;
+      box-shadow: 0 3px 6px rgb(0 0 0 / 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       color: white;
+      text-decoration: none;
+    }
+    .btn.adm {
+      background-color: #2671db;
+    }
+    .btn.manuf {
+      background-color: #76aa40;
+    }
+    .btn img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+    footer {
+      max-width: 360px;
+      margin: 0 auto;
       text-align: center;
-      padding: 12px 0;
-      font-weight: 500;
-      font-size: 14px;
-      font-family: 'Inter', sans-serif;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      font-size: 13px;
+      color: #174a99;
+      padding: 12px 0 24px;
       user-select: none;
     }
-
-    /* Responsividade */
-    @media (max-width: 480px) {
-      .container {
-        padding: 16px 20px 32px;
-        border-radius: 0;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      .btn {
-        font-size: 16px;
-        padding: 12px 0;
-      }
+    /* Imagens no topo */
+    .top-images img {
+      width: 100%;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <!-- Imagem topo -->
-  <img src="elements/Group 20.png" alt="Fábrica Bayer" class="header-image" />
+  <div class="top-images">
+    <img src="elements/Group 20.png" alt="Imagem superior 1" />
+    <img src="elements/Vector.png" alt="Imagem superior 2" />
+    <img src="elements/Rectangle 34.png" alt="Imagem superior 3" />
+  </div>
 
-  <!-- Container branco com conteúdo -->
-  <div class="container" id="mainContent">
-    <div class="logo-top">
+  <div id="mainContent">
+    <div class="logo">
       <img src="elements/logobayer.png" alt="Logo Bayer" />
     </div>
-
-    <h1>MyHR & <span>IT</span></h1>
+    <h1>MyHR & <span class="green">IT</span></h1>
     <p class="subtitle">Ponto de Acesso</p>
+    <p class="description">Aqui você pode navegar em tópicos como benefícios, seu tempo, abrir tickets, entre outros!</p>
+    <p class="description">Escolha seu perfil abaixo:</p>
 
-    <p>Aqui você pode navegar em tópicos como benefícios, seu tempo, abrir tickets, entre outros!</p>
-    <p>Escolha seu perfil abaixo:</p>
-
-    <a href="https://go.bayer.com/totemadm" class="btn administrativo" target="_blank" rel="noopener noreferrer">Sou do Administrativo</a>
-    <a href="https://go.bayer.com/totemmanufatura" class="btn manufatura" target="_blank" rel="noopener noreferrer">Sou de Manufatura</a>
+    <a href="https://go.bayer.com/totemadm" class="btn adm" target="_blank" rel="noopener noreferrer">
+      <img src="elements/category-card.png" alt="Administrativo" /> Sou do Administrativo
+    </a>
+    <a href="https://go.bayer.com/totemmanufatura" class="btn manuf" target="_blank" rel="noopener noreferrer">
+      <img src="elements/category-card-green.png" alt="Manufatura" /> Sou de Manufatura
+    </a>
   </div>
 
   <footer>
-    Desenvolvido por RH &amp; TI Brasil
+    Desenvolvido por RH & IT Brasil
   </footer>
 
   <script>
-    // Espera o conteúdo carregar
+    function smoothScrollTo(targetY, duration = 3000) {
+      const startY = window.pageYOffset;
+      const distance = targetY - startY;
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+
+        const ease = progress < 0.5
+          ? 2 * progress * progress
+          : -1 + (4 - 2 * progress) * progress;
+
+        window.scrollTo(0, startY + distance * ease);
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+      requestAnimationFrame(animation);
+    }
+
     window.addEventListener('load', () => {
       const mainContent = document.getElementById('mainContent');
-      // Obtem a posição vertical do container
       const y = mainContent.getBoundingClientRect().top + window.pageYOffset;
-      // Dá um scroll suave para o container
-      window.scrollTo({
-        top: y,
-        behavior: 'smooth'
-      });
+      smoothScrollTo(y, 3000);
     });
   </script>
 </body>
