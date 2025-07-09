@@ -1,26 +1,230 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IT Plus Support de IT</title>
-    <style>
-        /* Remove o padding e margin padrão */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-        /* Faz com que a imagem preencha a tela inteira respeitando a proporção */
-        .fullscreen-image {
-            width: 100%;
-            max-height: 100vh; /* altura máxima da tela */
-            object-fit: contain; /* caber toda a imagem, sem cortar */
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Suporte IT Plus</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f4f4;
+      color: #000;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header fixo */
+    header.header {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      padding: 6px 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #ffffff;
+      box-shadow: 0px 4px 4px #00000040;
+      z-index: 1000;
+      height: 60px;
+      gap: 15px;
+    }
+    .header .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .header .LOGO {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+    .header .myhr-IT-totem {
+      font-family: "Inter", Helvetica, sans-serif;
+      font-weight: 600;
+      color: #1c355e;
+      font-size: 18px;
+    }
+    .header .span {
+      color: #0091c8;
+    }
+    .header .text-wrapper-2 {
+      color: #2b6636;
+    }
+    .header .text-wrapper-3 {
+      color: #0091df;
+    }
+
+    /* Container principal */
+    .container {
+      max-width: 600px;
+      margin: 80px auto 60px; /* bottom margin for footer */
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 32px 24px 40px;
+      text-align: center;
+      flex-grow: 1;
+      position: relative;
+    }
+
+    /* Título principal */
+    h1 {
+      font-weight: 700;
+      font-size: 32px;
+      color: #1f4a99; /* azul padrão do site */
+      margin: 0 0 8px 0;
+    }
+
+    /* Título com ênfase verde no "TI" */
+    h1 span.green {
+      color: #2b6636; /* verde do menu Minha Tecnologia */
+    }
+
+    /* Subtítulo */
+    h2 {
+      font-weight: 700;
+      font-size: 22px;
+      color: #1f4a99; /* azul padrão */
+      margin: 0 0 20px 0;
+      line-height: 1.3;
+    }
+
+    /* Subtítulo com quebra de linha */
+    h2 br {
+      line-height: 1.2;
+    }
+
+    /* Texto explicativo */
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 16px 0;
+      color: #000;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Número telefone azul */
+    .phone-number {
+      font-weight: 900;
+      font-size: 26px;
+      color: #6a9fe8;
+      margin: 16px 0 0 0;
+    }
+
+    /* Botão WhatsApp */
+    .btn-whatsapp {
+      display: inline-block;
+      background-color: #2b6636;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(43,102,54,0.5);
+      transition: background-color 0.3s ease;
+      margin-top: 24px;
+      user-select: none;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #24532c;
+    }
+
+    /* Avatar 3D - ajustado para ficar abaixo do botão, centralizado */
+    .avatar {
+      max-width: 120px;
+      height: auto;
+      margin: 24px auto 0;
+      display: block;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Footer fixo */
+    footer {
+      background-color: #1f4a99;
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+      font-weight: 500;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      user-select: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Responsividade */
+    @media (max-width: 480px) {
+      .container {
+        margin: 80px 16px 60px;
+        padding: 24px 16px 32px;
+      }
+      h1 {
+        font-size: 26px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+      .btn-whatsapp {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
+      .avatar {
+        max-width: 80px;
+        margin-top: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <img src="itplus.png" alt="Imagem IT Plus" class="fullscreen-image" />
+  <!-- Header fixo com logo e título -->
+  <header class="header">
+    <div class="logo">
+      <img class="LOGO" src="img/logo.png" alt="Bayer Logo" />
+      <p class="myhr-IT-totem">
+        <span class="span">MyHR &amp;</span>
+        <span class="text-wrapper-2 green">IT</span>
+        <span class="span"> Totem</span>
+      </p>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <div class="container">
+    <h1>Suporte <span class="green">IT Plus</span></h1>
+    <h2>
+      Suporte de TI via WhatsApp<br />
+      Personalizado e Exclusivo<br />
+      para Produção
+    </h2>
+    <p>
+      Para acionar o TI, pressione o botão abaixo para iniciar a conversa com o time, ou adicione este número nos seus contatos de WhatsApp:
+    </p>
+    <p class="phone-number">11-3383-8603</p>
+    <a href="https://wa.me/551133838603" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" aria-label="Suporte IT Plus WhatsApp">
+      Suporte IT Plus WhatsApp
+    </a>
+
+    <!-- Avatar 3D -->
+    <img class="avatar" src="elements/avatar-itplus.png" alt="Avatar Suporte IT Plus" />
+  </div>
+
+  <!-- Footer fixo -->
+  <footer>
+    Desenvolvido por RH &amp; TI Brasil
+  </footer>
 </body>
 </html>
