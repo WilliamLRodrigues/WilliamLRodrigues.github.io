@@ -156,7 +156,7 @@
   <img src="elements/Group 20.png" alt="Fábrica Bayer" class="header-image" />
 
   <!-- Container branco com conteúdo -->
-  <div class="container">
+  <div class="container" id="mainContent">
     <div class="logo-top">
       <img src="elements/logobayer.png" alt="Logo Bayer" />
     </div>
@@ -174,5 +174,19 @@
   <footer>
     Desenvolvido por RH &amp; TI Brasil
   </footer>
+
+  <script>
+    // Espera o conteúdo carregar
+    window.addEventListener('load', () => {
+      const mainContent = document.getElementById('mainContent');
+      // Obtem a posição vertical do container
+      const y = mainContent.getBoundingClientRect().top + window.pageYOffset;
+      // Dá um scroll suave para o container
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
 </html>
