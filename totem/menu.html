@@ -41,17 +41,13 @@
       .header .myhr-IT-totem {
         font-family: "Inter", Helvetica, sans-serif;
         font-weight: 600;
-        color: #1c355e;
         font-size: 18px;
       }
-      .header .span {
+      .header .blue-span {
         color: #0091c8;
       }
-      .header .text-wrapper-2 {
-        color: #2b6636;
-      }
-      .header .text-wrapper-3 {
-        color: #0091df;
+      .header .green-it {
+        color: #2b6636 !important;
       }
 
       /* CONTAINER PRINCIPAL */
@@ -101,7 +97,7 @@
         align-items: center;
         gap: 12px;
         color: #1c355e;
-        font-weight: 600;
+        font-weight: 400;
         font-size: 16px;
         box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
         transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -175,6 +171,24 @@
           height: 24px;
         }
       }
+
+      /* Footer fixo */
+      footer {
+        background-color: #1f4a99;
+        color: white;
+        text-align: center;
+        padding: 12px 0;
+        font-weight: 500;
+        font-size: 14px;
+        font-family: 'Inter', sans-serif;
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        user-select: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+      }
     </style>
   </head>
   <body>
@@ -183,10 +197,9 @@
       <div class="logo">
         <img class="LOGO" src="img/logo.png" alt="Bayer Logo" />
         <p class="myhr-IT-totem">
-          <span class="span">MyHR &amp;</span>
-          <span class="text-wrapper-2">&nbsp;</span>
-          <span class="text-wrapper-3">IT</span>
-          <span class="span"> Totem</span>
+          <span class="blue-span">MyHR &amp; </span>
+          <span class="green-it">IT</span>
+          <span class="blue-span"> Totem Mobile</span>
         </p>
       </div>
     </header>
@@ -331,10 +344,10 @@
           </div>
           <p class="subtitle-it">Realize aberturas de chamados de IT</p>
           <div class="dropdown-content it" id="dropdownContentIT">
-            <a href="itplus.html" class="dropdown-button" target="_blank" rel="noopener noreferrer" >
-              <img class="img" src="img/send-message-1.svg" alt="Conheça o IT PLUS! (WhatsApp)" />
-              Conheça o IT PLUS! (WhatsApp)
-            </a>
+         <a href="itplus.html" class="dropdown-button" target="_blank" rel="noopener noreferrer" style="border-color: #2b6636; color: #2b6636;">
+  <img class="img" src="img/send-message-1.svg" alt="Conheça o IT PLUS! (WhatsApp)" />
+  Conheça o IT PLUS! (WhatsApp)
+</a>
             <a href="https://bayersi.service-now.com/sp?id=sc_cat_item_2&sys_id=999e98bcdb87df0074e7dcd74896193f&sysparm_category=e15706fc0a0a0aa7007fc21e1ab70c2f" class="dropdown-button" target="_blank" rel="noopener noreferrer" style="border-color: #563d7c; color: #2b6636;">
               <img class="img" src="img/laptop-1.svg" alt="Tenho um Problema Técnico" />
               Tenho um Problema Técnico
@@ -360,5 +373,9 @@
         arrow.classList.toggle("open");
       }
     </script>
+
+    <footer>
+      Desenvolvido por RH &amp; TI Brasil
+    </footer>
   </body>
 </html>
